@@ -23,6 +23,7 @@
   "devDependencies": {
     "@types/d3": "4.4.0",
     "@types/electron": "1.4.31",
+    "d3": "4.4.1",
     "electron": "1.4.13"
   }
 }

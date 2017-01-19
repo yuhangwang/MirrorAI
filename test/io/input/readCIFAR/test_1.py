@@ -21,3 +21,4 @@ def test():
         'num_cases_per_batch',
         'num_vis']
     assert len(answer['data']) == 20000
+    assert answer['data'][0].shape == (32, 32, 3)

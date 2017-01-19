@@ -3,7 +3,7 @@ Read the CIFAR data set
 """
 from ...tk.io.pypickle import readPyPickle
 import numpy
-import functools
+from ...tk import functional
 
 
 def readCIFAR(meta_file, data_files):
@@ -16,7 +16,7 @@ def readCIFAR(meta_file, data_files):
     """
     def merge(xs):
         if type(xs[0]) == list:
-            return reduce(+, xs, [])
+            return functional.reduce(lambda x, y: x + y, xs, [])
         elif type(xs[0]) == numpy.ndarray:
             return numpy.concatenate(xs)
         else:
@@ -28,8 +28,5 @@ def readCIFAR(meta_file, data_files):
         return output
     else:
         for k in data[0].keys():
-            print("key = ", k)
-            print(len(data[0][k]))
-            print(data[0][k].shape)
-            output[k] = numpy.concatenate([d[k] for d in data])
+            output[k] = merge([d[k] for d in data])
         return output

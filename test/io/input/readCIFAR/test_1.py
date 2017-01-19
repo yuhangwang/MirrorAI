@@ -8,7 +8,16 @@ def test():
         )
     f_meta = os.path.join(dir_data, "batches.meta")
     data_files = [
-            os.path.join(dir_data, "data_batch_1")
+            os.path.join(dir_data, "data_batch_1"),
+            os.path.join(dir_data, "data_batch_2")
         ]
     answer = readCIFAR(f_meta, data_files)
-    print(answer.keys())
+    assert sorted(answer.keys()) == [
+        'batch_label',
+        'data',
+        'filenames',
+        'label_names',
+        'labels',
+        'num_cases_per_batch',
+        'num_vis']
+    assert len(answer['data']) == 20000

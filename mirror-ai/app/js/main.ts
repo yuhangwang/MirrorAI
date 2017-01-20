@@ -1,5 +1,4 @@
 import {app, BrowserWindow} from "electron";
-import {render} from "./render";
 
 
 let mainWindow = null;

@@ -3,7 +3,7 @@ import os
 
 
 def main():
-    dir_data = os.path.join("../../..",
+    dir_data = os.path.join("..",
         "data/cifar/cifar-10-batches-py"
         )
     f_meta = os.path.join(dir_data, "batches.meta")
@@ -22,7 +22,7 @@ def main():
         'num_vis']
     assert len(answer['data']) == 20000
     assert answer['data'][0].shape == (32, 32, 3)
-    return 123
+    print(123)
 
 if __name__ == '__main__':
     main()

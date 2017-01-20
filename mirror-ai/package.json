@@ -23,7 +23,10 @@
   "devDependencies": {
     "@types/d3": "4.4.0",
     "@types/electron": "1.4.31",
+    "@types/systemjs": "0.19.33",
     "d3": "4.4.1",
-    "electron": "1.4.13"
+    "electron": "1.4.13",
+    "systemjs": "0.19.42",
+    "typescript": "2.1.5"
   }
 }

@@ -1,7 +1,8 @@
-const { app, BrowserWindow } = require('electron');
+"use strict";
+const electron_1 = require("electron");
 let mainWindow = null;
-app.on('ready', () => {
+electron_1.app.on('ready', () => {
     console.log("hello from electron!");
-    mainWindow = new BrowserWindow();
+    mainWindow = new electron_1.BrowserWindow();
     mainWindow.webContents.loadURL(`file://${__dirname}/../html/index.html`);
 });

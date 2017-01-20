@@ -1,4 +1,6 @@
-const {app, BrowserWindow} = require('electron');
+import {app, BrowserWindow} from "electron";
+import {render} from "./render";
+
 
 let mainWindow = null;
 app.on('ready',
@@ -8,4 +10,3 @@ app.on('ready',
         mainWindow.webContents.loadURL(`file://${__dirname}/../html/index.html`);
     }
     );
-
